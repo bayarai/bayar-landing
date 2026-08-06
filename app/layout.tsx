@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "bayar.dev - Gen AI Workflows",
-  description: "coming soon",
+  title: "bayar.dev | Gen AI Workflows",
+  description: "The developer platform for Generative AI workflows. Design, chain, and execute multi-agent LLM pipelines.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
