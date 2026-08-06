@@ -21,22 +21,32 @@ export default function Home() {
 
         {/* CTA Section */}
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a
-            href="mailto:contact@bayar.dev?subject=Waitlist%20Request"
-            className="w-full sm:w-auto px-6 py-3 rounded-lg bg-white text-black font-medium hover:bg-gray-200 transition"
-          >
-            Join the Waitlist
-          </a>
+          {/* Replaced mailto link with a form */}
+          <form className="w-full flex flex-col sm:flex-row gap-2">
+            <input 
+              type="email" 
+              placeholder="Enter your email" 
+              required
+              className="w-full sm:w-64 px-4 py-3 rounded-lg bg-zinc-900 border border-gray-800 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 transition"
+            />
+            <button 
+              type="submit"
+              className="w-full sm:w-auto px-6 py-3 rounded-lg bg-white text-black font-medium hover:bg-gray-200 transition whitespace-nowrap"
+            >
+              Join Waitlist
+            </button>
+          </form>
+          
           <a
             href="#features"
-            className="w-full sm:w-auto px-6 py-3 rounded-lg border border-gray-800 bg-zinc-900 text-gray-300 font-medium hover:bg-zinc-800 transition"
+            className="w-full sm:w-auto px-6 py-3 rounded-lg border border-gray-800 bg-zinc-900 text-gray-300 font-medium hover:bg-zinc-800 transition whitespace-nowrap text-center"
           >
             View Features
           </a>
         </div>
       </div>
 
-      {/* Features Grid (Added for Google Approval) */}
+      {/* Features Grid */}
       <div id="features" className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-3 gap-4 my-8 text-left">
         <div className="p-5 rounded-lg border border-gray-800 bg-zinc-950">
           <h3 className="font-semibold text-white mb-2">Workflow Orchestration</h3>
@@ -58,7 +68,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Footer (Proves Domain Ownership) */}
+      {/* Footer */}
       <footer className="max-w-4xl w-full border-t border-gray-900 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-2">
         <span>&copy; 2026 bayar.dev. All rights reserved.</span>
         <a 
