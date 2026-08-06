@@ -1,5 +1,5 @@
-// A reusable component for your features to keep the main code clean
-function FeatureCard({ title, description }) {
+// Added TypeScript types for the props: { title: string; description: string }
+function FeatureCard({ title, description }: { title: string; description: string }) {
   return (
     <article className="bg-zinc-950 border border-zinc-800/80 rounded-xl p-6 hover:border-zinc-700 hover:bg-zinc-900/50 transition-all duration-300">
       <h3 className="text-white font-semibold text-lg mb-2">
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section - Added scroll-margin so the anchor link doesn't cut off the top */}
+      {/* Features Section */}
       <section id="features" aria-label="Platform Features" className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-16 scroll-mt-24">
         <FeatureCard 
           title="Workflow Orchestration" 
