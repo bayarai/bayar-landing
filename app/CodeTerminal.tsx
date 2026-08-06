@@ -56,42 +56,42 @@ export default function CodeTerminal() {
     );
   };
 
-  return (
-    
-{/* Terminal Header */}
+return (
+    <div className="mt-12 w-full max-w-2xl mx-auto text-left bg-[#0d1117] border border-gray-800 rounded-xl shadow-2xl overflow-hidden">
+      
+      {/* Terminal Header */}
       <div className="flex items-center px-4 py-3 bg-zinc-900/50 border-b border-gray-800">
         <div className="flex gap-2">
           <div className="w-3 h-3 rounded-full bg-red-500"></div>
           <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
           <div className="w-3 h-3 rounded-full bg-green-500"></div>
         </div>
-        {/* Make sure setup.ts is wrapped in this span tag! */}
         <span className="ml-4 text-xs text-gray-500 font-mono">setup.ts</span>
       </div>
       
       {/* Terminal Body */}
-      
+      <div className="p-6 font-mono text-sm sm:text-base leading-relaxed text-white min-h-[320px]">
         {displayedLines.map((line, i) => (
-          
+          <div key={i} className="min-h-[1.5rem]">
             {formatCode(line)}
-          
+          </div>
         ))}
         
         {/* Currently typing line */}
         {lineIndex < codeLines.length && (
-          
+          <div className="min-h-[1.5rem]">
             {formatCode(currentLine)}
-            
-          
+            <span className="inline-block w-2 h-4 bg-gray-400 animate-pulse ml-1 align-middle"></span>
+          </div>
         )}
         
         {/* Persistent blinking cursor after typing finishes */}
         {lineIndex >= codeLines.length && (
-           
-             
-           
+           <div className="min-h-[1.5rem]">
+             <span className="inline-block w-2 h-4 bg-gray-400 animate-pulse ml-1 align-middle"></span>
+           </div>
         )}
+      </div>
       
-    
+    </div>
   );
-}
