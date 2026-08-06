@@ -41,15 +41,17 @@ export default function CodeTerminal() {
     return () => clearInterval(typingInterval);
   }, [lineIndex]);
 
-  // A lightweight syntax highlighter tailored for this specific snippet
+// A lightweight syntax highlighter tailored for this specific snippet
   const formatCode = (text) => {
     if (text.startsWith("//")) {
-      return {text};
+      return <span className="text-gray-500">{text}</span>;
     }
     return (
-      $&')
-          .replace(/Pipeline|Monitor|Guardrails/g, '$&')
-          .replace(/'[^']*'/g, '$&')
+      <span dangerouslySetInnerHTML={{
+        __html: text
+          .replace(/import|from|const|new/g, '<span class="text-pink-400">$&</span>')
+          .replace(/Pipeline|Monitor|Guardrails/g, '<span class="text-blue-400">$&</span>')
+          .replace(/'[^']*'/g, '<span class="text-amber-300">$&</span>')
       }} />
     );
   };
